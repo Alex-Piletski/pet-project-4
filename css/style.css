@@ -69,9 +69,8 @@ section {
 	background-color: #F1F1F1;
 	border-color: transparent
 }
-.navbar-default .navbar-brand {
-	color: #565656;
-    padding: 5px;
+.navbar-light {
+    background-color: #F1F1F1;
 }
 
 /*.navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:focus,.navbar-default .navbar-brand:active,.navbar-default .navbar-brand.active {
