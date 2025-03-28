@@ -599,9 +599,15 @@ font-size: 11px;
 ---------------------------------- */
 #back-top {
     position: fixed;
+    bottom: 20px;
+    right: 20px;
     z-index: 1000;
-    bottom: 40px;
-    right: 50px;
+}
+@media (max-width: 768px) {
+    #back-top {
+        bottom: 10px;
+        right: 10px;
+    }
 }
 #back-top a {
     width: 60px;
