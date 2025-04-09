@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const supabaseUrl = 'https://ВАШ_PROJECT_ID.supabase.co';
-  const supabaseKey = 'ВАШ_ANON_KEY';
+  const supabaseUrl = 'https://wrbihsfyjmxtffkfugxb.supabase.co';
+  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndyYmloc2Z5am14dGZma2Z1Z3hiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMwNjQ2NTUsImV4cCI6MjA1ODY0MDY1NX0.XIAqNZyH0-rehgEIPyGB2Icm7HPMcut-bANd1AX5c8U';
   const supabase = supabase.createClient(supabaseUrl, supabaseKey);
   const gallery = document.getElementById('photo-gallery');
 
