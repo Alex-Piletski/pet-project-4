@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,44 +8,86 @@
     <meta name="author" content="Жители города Ковров">
     <meta name="keywords" content="Ковров, город Ковров, город воинской славы, фото Коврова">
     <link rel="icon" type="image/x-icon" href="images/favicon.png">
-    <title>Город воинской славы</title>
+    <title>Город воинской славы - Ковров</title>
+    <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Ваши стили -->
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body id="page-top">
+    <!-- Навигация -->
     <nav class="navbar navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="#">@cityofmilitaryglory</a>
         </div>
     </nav>
     
-    <section id="portfolio">
+    <!-- Галерея -->
+    <section id="portfolio" class="py-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <div class="section-title">
-                        <h2>Город воинской славы - Ковров</h2>
-                    </div>
+                    <h2>Город воинской славы - Ковров</h2>
                 </div>
             </div>
-            <div class="row" id="photo-gallery"></div>
+            
+            <!-- Контейнер для фото -->
+            <div class="row mt-4" id="photo-gallery">
+                <!-- Фото будут подгружаться через JS -->
+            </div>
         </div>
     </section>
 
-    <div id="modals-container"></div>
-    
-    <p id="back-top">
-        <a href="#top"><i class="fa fa-angle-up"></i></a>
+    <!-- Кнопка "Наверх" -->
+    <p id="back-top" class="fixed-bottom text-end pe-4 pb-3">
+        <a href="#top" class="btn btn-primary rounded-circle p-3">
+            <i class="fas fa-arrow-up"></i>
+        </a>
     </p>
-    <footer>
+
+    <!-- Подвал -->
+    <footer class="bg-light py-4">
         <div class="container text-center">
             <p>Разработано в Коврове - Городе воинской славы</p>
         </div>
     </footer>
-    
-    <!-- В конце файла, перед </body> -->
-<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-<script src="photos.js"></script>
+
+    <!-- Скрипты -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Массив с именами файлов (замените на свои)
+        const photos = [
+            'photo-3.jpg',
+            'photo-4.jpg', 
+            'photo-5.jpg',
+            'photo-253.jpg'
+        ];
+
+        // Загружаем фото в галерею
+        const gallery = document.getElementById('photo-gallery');
+        photos.forEach(photo => {
+            gallery.innerHTML += `
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="images/${photo}" 
+                             alt="Достопримечательность Коврова" 
+                             class="card-img-top img-fluid"
+                             loading="lazy">
+                        <div class="card-body">
+                            <p class="card-text text-muted small">${photo.replace('.jpg', '')}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        // Плавная прокрутка к началу
+        document.querySelector('#back-top a').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
