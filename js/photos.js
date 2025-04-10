@@ -24,7 +24,8 @@ async function loadPhotos() {
   gallery.innerHTML = ''; // Очищаем старые фото
 
   files.forEach(file => {
-    const photoUrl = `${supabaseUrl}/storage/v1/object/public/kovrov-photos/${file.name}`;
+    const photoUrl = `${supabaseUrl}/storage/v1/object/public/kovrov-photos/photo-100.jpg
+}`;
     gallery.innerHTML += `
       <div class="col-md-4 mb-4">
         <img src="${photoUrl}" 
